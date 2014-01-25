@@ -34,6 +34,10 @@
             android:name="com.csupomona.hackpoly.DiscountActivity"
             android:label="@string/title_activity_discount" >
         </activity>
+        <activity
+            android:name="com.example.hackpoly.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>
