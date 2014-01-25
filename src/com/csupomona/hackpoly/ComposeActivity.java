@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hackpoly.R;
@@ -21,6 +22,7 @@ public class ComposeActivity extends Activity {
 	
 	private LocationManager locationManager;
 	private String provider;
+	private Geocoder geo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class ComposeActivity extends Activity {
 		if (location != null) {
 			System.out.println("Provider " + provider + " has been selected.");
 		}
-		Toast.makeText(this, location.getLatitude() + " " + location.getLongitude(), Toast.LENGTH_LONG).show();
+		geo = new Geocoder(this);
 	}
 
 	@Override
@@ -42,7 +44,6 @@ public class ComposeActivity extends Activity {
 	
 	public void getGPS(View view) {
 		Location location = MainActivity.getLocation();
-		Geocoder geo = new Geocoder(this);
 		try {
 			List<Address> l = geo.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
 			String addresses = "";
@@ -61,7 +62,29 @@ public class ComposeActivity extends Activity {
 	}
 	
 	public void submitDiscount(View view) {
-		
+		EditText editText = (EditText) findViewById(R.id.address);
+		try {
+			List<Address> addresses = geo.getFromLocationName(editText.getText().toString(), 20);
+			Location mLocation = MainActivity.getLocation();
+			int minIndex = 0;
+			double minVal = 0;
+			for (int i = 0; i < addresses.size(); i++) {
+				float results[] = new float[1];
+				Location.distanceBetween(mLocation.getLatitude(), mLocation.getLongitude(),
+						addresses.get(i).getLatitude(), addresses.get(i).getLongitude(), results);
+				if (minVal == 0 || results[0] < minVal) {
+					minVal = results[0];
+					minIndex = i;
+				}
+			}
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(addresses.get(minIndex).getLatitude() + " " + addresses.get(minIndex).getLongitude()).setTitle("Addresses");
+			AlertDialog dialog = builder.create();
+			dialog.show();
+			Log.i("Error Message", "Address used = " + addresses.get(minIndex) + "at index " + minIndex);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
