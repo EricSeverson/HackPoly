@@ -34,9 +34,7 @@ public class MainActivity extends Activity {
 
 	public static Location getLocation() {
 		Criteria criteria = new Criteria();
-		System.out.print("Made it here\n");
 		String provider = locationManager.getBestProvider(criteria, false);
-		System.out.println(provider);
 		return locationManager.getLastKnownLocation(provider);
 	}
 	

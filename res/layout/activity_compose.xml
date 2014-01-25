@@ -61,6 +61,16 @@
         android:layout_below="@+id/textfield"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="30dp"
-        android:text="Button" />
+        android:onClick="getGPS"
+        android:text="GPS" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="submitDiscount"
+        android:text="Submit" />
 
 </RelativeLayout>
