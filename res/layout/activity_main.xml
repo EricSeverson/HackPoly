@@ -18,15 +18,13 @@
         android:onClick="toCompose"
         android:text="Compose" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="toList"
-        android:text="Button" />
+        android:src="@drawable/search" />
 
 </RelativeLayout>
