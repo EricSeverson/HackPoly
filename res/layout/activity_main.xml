@@ -9,15 +9,6 @@
     android:background="#2B423B"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="toCompose"
-        android:text="Compose" />
-
     <ImageButton
         android:id="@+id/upvote_icon"
         android:layout_width="250dp"
@@ -29,5 +20,14 @@
         android:onClick="toList"
         android:scaleType="fitEnd"
         android:src="@drawable/search" />
+
+    <ImageButton
+        android:id="@+id/formSubmission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/newform"
+        android:onClick=:"toCo	mpose" />
 
 </RelativeLayout>
