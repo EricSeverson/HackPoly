@@ -7,17 +7,22 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.hackpoly.R;
 
 public class MainActivity extends Activity {
 
+	private static LocationManager locationManager;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	}
 
 	@Override
@@ -27,10 +32,11 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	public Location getLocation() {
-		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+	public static Location getLocation() {
 		Criteria criteria = new Criteria();
+		System.out.print("Made it here\n");
 		String provider = locationManager.getBestProvider(criteria, false);
+		System.out.println(provider);
 		return locationManager.getLastKnownLocation(provider);
 	}
 	
