@@ -8,24 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:text="Compose" />
+        android:text="@string/hello_world" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+<<<<<<< HEAD
+</RelativeLayout>
+=======
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="sendMessage"
-        android:text="Button" />
+        android:layout_marginTop="38dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/roundbutton" />
 
 </RelativeLayout>
+>>>>>>> a3ec7e74aa1a103d9ba75678c7a0528a895833d7
