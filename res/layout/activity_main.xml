@@ -18,9 +18,10 @@
         android:id="@+id/imageButton1"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:scaleType="fitEnd"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/BigRedButton" />
+        android:layout_marginTop="38dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/roundbutton" />
 
 </RelativeLayout>
