@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.hackpoly.MainActivity"
+            android:name="com.csupomona.hackpoly.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +23,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.hackpoly.ListActivity"
+            android:name="com.csupomona.hackpoly.ListActivity"
             android:label="@string/title_activity_list" >
         </activity>
         <activity
-            android:name="com.example.hackpoly.ComposeActivity"
+            android:name="com.csupomona.hackpoly.ComposeActivity"
             android:label="@string/title_activity_compose" >
         </activity>
         <activity
-            android:name="com.example.hackpoly.DiscountActivity"
+            android:name="com.csupomona.hackpoly.DiscountActivity"
             android:label="@string/title_activity_discount" >
         </activity>
     </application>

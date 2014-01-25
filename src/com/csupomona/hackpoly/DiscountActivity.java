@@ -1,21 +1,23 @@
-package com.example.hackpoly;
+package com.csupomona.hackpoly;
+
+import com.example.hackpoly.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class ComposeActivity extends Activity {
+public class DiscountActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_compose);
+		setContentView(R.layout.activity_discount);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.compose, menu);
+		getMenuInflater().inflate(R.menu.discount, menu);
 		return true;
 	}
 
