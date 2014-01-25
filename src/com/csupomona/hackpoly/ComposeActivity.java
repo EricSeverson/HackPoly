@@ -77,8 +77,9 @@ public class ComposeActivity extends Activity {
 					minIndex = i;
 				}
 			}
+			Address destLocation = geo.getFromLocation(addresses.get(minIndex).getLatitude(), addresses.get(minIndex).getLongitude(), 1).get(0);
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(addresses.get(minIndex).getLatitude() + " " + addresses.get(minIndex).getLongitude()).setTitle("Addresses");
+			builder.setMessage(addresses.get(minIndex).getLatitude() + " " + addresses.get(minIndex).getLongitude() + "\n" + destLocation.getAddressLine(0) + "\n" + destLocation.getAddressLine(1)).setTitle("Addresses");
 			AlertDialog dialog = builder.create();
 			dialog.show();
 			Log.i("Error Message", "Address used = " + addresses.get(minIndex) + "at index " + minIndex);
