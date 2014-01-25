@@ -14,24 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="88dp"
         android:ems="10"
         android:hint="Establishment"
         android:inputType="textPersonName" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="33dp"
-        android:ems="10"
-        android:hint="Description"
-        android:maxLength="150" />
 
     <EditText
         android:id="@+id/address"
@@ -48,8 +36,7 @@
         android:id="@+id/textfield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/address"
         android:ems="10"
         android:text="or" />
 
@@ -57,7 +44,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignLeft="@+id/editText1"
         android:layout_below="@+id/textfield"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="30dp"
@@ -72,5 +59,16 @@
         android:layout_alignParentRight="true"
         android:onClick="submitDiscount"
         android:text="Submit" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="Enter Description of the Discount"
+        android:inputType="textMultiLine" />
 
 </RelativeLayout>

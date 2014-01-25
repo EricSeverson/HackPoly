@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -23,6 +24,7 @@ public class ComposeActivity extends Activity {
 	private LocationManager locationManager;
 	private String provider;
 	private Geocoder geo;
+	private AlertDialog.Builder builder;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class ComposeActivity extends Activity {
 			System.out.println("Provider " + provider + " has been selected.");
 		}
 		geo = new Geocoder(this);
+		builder = new AlertDialog.Builder(this);
 	}
 
 	@Override
@@ -52,7 +55,6 @@ public class ComposeActivity extends Activity {
 					addresses += a.getAddressLine(i) + "\n";				
 				}
 			}
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setMessage(addresses).setTitle("Addresses");
 			AlertDialog dialog = builder.create();
 			dialog.show();
@@ -78,13 +80,16 @@ public class ComposeActivity extends Activity {
 				}
 			}
 			Address destLocation = geo.getFromLocation(addresses.get(minIndex).getLatitude(), addresses.get(minIndex).getLongitude(), 1).get(0);
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder = new AlertDialog.Builder(this);
 			builder.setMessage(addresses.get(minIndex).getLatitude() + " " + addresses.get(minIndex).getLongitude() + "\n" + destLocation.getAddressLine(0) + "\n" + destLocation.getAddressLine(1)).setTitle("Addresses");
 			AlertDialog dialog = builder.create();
 			dialog.show();
 			Log.i("Error Message", "Address used = " + addresses.get(minIndex) + "at index " + minIndex);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			builder.setMessage("Invalid Address. Enter a valid address or use gps button.").setTitle("InvalidAddress");
+			builder.setPositiveButton("OK", null);
+			AlertDialog dialog = builder.create();
+			dialog.show();
 		}
 	}
 
