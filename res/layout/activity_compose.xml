@@ -72,8 +72,7 @@
         android:layout_alignRight="@+id/checkBox1"
         android:layout_below="@+id/checkBox1"
         android:background="#A0A0A0"
-        android:text="Food"
-        android:text="CheckBox" />
+        android:text="Food" />
  
     <CheckBox
         android:id="@+id/checkBox4"
