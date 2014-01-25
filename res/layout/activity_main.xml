@@ -28,6 +28,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:src="@drawable/newform"
-        android:onClick=:"toCo	mpose" />
+        android:onClick="toCompose"/>
 
 </RelativeLayout>
